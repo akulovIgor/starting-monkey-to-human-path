@@ -6,5 +6,6 @@ package RPIS41.Akulov.wdad;
 public class Application {
     public static void main(String[] args) {
         System.out.println("I’m Igor Akulov, and I’m not a monkey");
+        TestXMLClass.test();
     }
 }
