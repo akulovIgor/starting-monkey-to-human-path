@@ -10,8 +10,8 @@ public class TestPreferencesManager {
         try {
             PreferencesManager preferencesManager = PreferencesManager.getInstance();
 
-            System.out.println(preferencesManager.getCreateRegistry());
-            System.out.println(preferencesManager.isUseCodeBaseOnly());
+            System.out.println(preferencesManager.isCreateRegistry());
+            System.out.println(preferencesManager.getUseCodeBaseOnly());
             System.out.println(preferencesManager.getClassProvider());
             System.out.println(preferencesManager.getPolicyPath());
             System.out.println(preferencesManager.getRegistryAddress());
