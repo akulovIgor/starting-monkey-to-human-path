@@ -1,166 +1,160 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE restaurant SYSTEM "restaurant.dtd">
 <restaurant>
-    <date day="12" month="3" year="2015">
+    <date day="12" month="10" year="2013">
         <order>
-            <officiant firstname="alexander" secondname="petrov"/>
-            <item cost="120" name="pirozhki"/>
-            <item cost="50" name="chai"/>
-            <item cost="240" name="borsch"/>
-            <totalcost>410</totalcost>
+            <officiant firstname="egor" secondname="ivanov"/>
+            <item cost="300" name="grechka"/>
+            <item cost="100" name="chai"/>
+            <item cost="270" name="sosiski"/>
+            <totalcost>670</totalcost>
         </order>
         <order>
-            <officiant firstname="victor" secondname="sidorov"/>
-            <item cost="10" name="hleb"/>
-            <item cost="220" name="kofe"/>
-            <item cost="34" name="bulki"/>
-            <item cost="150" name="pirozhki"/>
-            <item cost="88" name="riba"/>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
         </order>
         <order>
-            <officiant firstname="kolyan" secondname="ivanov"/>
-            <item cost="1200" name="ikra"/>
-            <item cost="48" name="vodka"/>
-            <item cost="320" name="blini"/>
-            <totalcost>153345</totalcost>
+            <officiant firstname="vasya" secondname="sidorov"/>
+            <item cost="1200" name="riba"/>
+            <item cost="580" name="pivo"/>
+            <item cost="820" name="kiriki"/>
+            <totalcost>451254</totalcost>
         </order>
         <order>
-            <officiant firstname="dimas" secondname="sidorov"/>
-            <item cost="230" name="sushi"/>
-            <item cost="47" name="sok"/>
-            <item cost="560" name="pizza"/>
-            <item cost="145" name="pirozhki"/>
-            <item cost="233" name="borsch"/>
-        </order>
-    </date>
-    <date day="8" month="1" year="2016">
-        <order>
-            <officiant firstname="alexander" secondname="petrov"/>
-            <item cost="144" name="pirozhki"/>
-            <item cost="60" name="chai"/>
-            <item cost="366" name="borsch"/>
-            <totalcost>410</totalcost>
-        </order>
-        <order>
-            <officiant firstname="dimas" secondname="sidorov"/>
-            <item cost="34" name="hleb"/>
-            <item cost="540" name="kofe"/>
-            <item cost="67" name="bulki"/>
-            <item cost="140" name="pirozhki"/>
-            <item cost="78" name="riba"/>
-        </order>
-        <order>
-            <officiant firstname="kolyan" secondname="ivanov"/>
-            <item cost="100" name="ikra"/>
-            <item cost="24" name="vodka"/>
-            <item cost="3340" name="blini"/>
-            <totalcost>1568</totalcost>
-        </order>
-        <order>
-            <officiant firstname="dimas" secondname="sidorov"/>
-            <item cost="660" name="sushi"/>
-            <item cost="87" name="sok"/>
-            <item cost="50" name="pizza"/>
-            <item cost="555" name="pirozhki"/>
-            <item cost="866" name="borsch"/>
-            <totalcost>32453453</totalcost>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <item cost="900" name="vino"/>
+            <item cost="300" name="grechka"/>
+            <item cost="1200" name="riba"/>
         </order>
     </date>
-    <date day="23" month="6" year="2014">
+    <date day="19" month="1" year="2015">
         <order>
-            <officiant firstname="denis" secondname="ivanov"/>
-            <item name="sous" cost="654"/>
-            <item name="bulka" cost="23"/>
+            <officiant firstname="egor" secondname="ivanov"/>
+            <item cost="300" name="grechka"/>
+            <item cost="100" name="chai"/>
+            <item cost="270" name="sosiski"/>
+            <totalcost>670</totalcost>
+        </order>
+        <order>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
+        </order>
+        <order>
+            <officiant firstname="vasya" secondname="sidorov"/>
+            <item cost="1200" name="riba"/>
+            <item cost="580" name="pivo"/>
+            <item cost="820" name="kiriki"/>
+            <totalcost>6541</totalcost>
+        </order>
+        <order>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <item cost="900" name="vino"/>
+            <item cost="300" name="grechka"/>
+            <item cost="1200" name="riba"/>
+            <totalcost>1456845</totalcost>
+        </order>
+    </date>
+    <date day="29" month="7" year="2014">
+        <order>
+            <officiant firstname="vlad" secondname="ivanov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
             <totalcost>677</totalcost>
         </order>
         <order>
-            <officiant firstname="vovchik" secondname="petrov"/>
-            <item name="kolbasa" cost="600"/>
-            <item name="gribi" cost="155"/>
-        </order>
-        <order>
-            <officiant secondname="sidorov"/>
-            <item name="gbf" cost="5345"/>
-            <item name="vffvd" cost="655"/>
-            <totalcost>434</totalcost>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="900" name="vino"/>
+            <item cost="150" name="lazanya"/>
         </order>
     </date>
-    <date day="12" month="8" year="2016">
+    <date day="10" month="10" year="2016">
         <order>
-            <officiant firstname="alexander" secondname="petrov"/>
-            <item cost="144" name="pirozhki"/>
-            <item cost="60" name="chai"/>
-            <item cost="366" name="borsch"/>
-            <totalcost>410</totalcost>
+            <officiant firstname="egor" secondname="ivanov"/>
+            <item cost="300" name="grechka"/>
+            <item cost="100" name="chai"/>
+            <item cost="270" name="sosiski"/>
+            <totalcost>670</totalcost>
         </order>
         <order>
-            <officiant firstname="victor" secondname="sidorov"/>
-            <item cost="10" name="hleb"/>
-            <item cost="220" name="kofe"/>
-            <item cost="34" name="bulki"/>
-            <item cost="150" name="pirozhki"/>
-            <item cost="88" name="riba"/>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
         </order>
         <order>
-            <officiant firstname="dimas" secondname="sidorov"/>
-            <item cost="230" name="sushi"/>
-            <item cost="47" name="sok"/>
-            <item cost="560" name="pizza"/>
-            <item cost="145" name="pirozhki"/>
-            <item cost="233" name="borsch"/>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <item cost="900" name="vino"/>
+            <item cost="300" name="grechka"/>
+            <item cost="1200" name="riba"/>
         </order>
     </date>
     <date day="25" month="4" year="2015">
         <order>
-            <officiant firstname="dimas" secondname="sidorov"/>
-            <item cost="660" name="sushi"/>
-            <item cost="87" name="sok"/>
-            <item cost="50" name="pizza"/>
-            <item cost="555" name="pirozhki"/>
-            <item cost="866" name="borsch"/>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <item cost="900" name="vino"/>
+            <item cost="300" name="grechka"/>
+            <item cost="1200" name="riba"/>
         </order>
         <order>
-            <officiant firstname="victor" secondname="sidorov"/>
-            <item cost="10" name="hleb"/>
-            <item cost="220" name="kofe"/>
-            <item cost="34" name="bulki"/>
-            <item cost="150" name="pirozhki"/>
-            <item cost="88" name="riba"/>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
         </order>
         <order>
-            <officiant firstname="vovchik" secondname="petrov"/>
-            <item name="kolbasa" cost="600"/>
-            <item name="gribi" cost="155"/>
+            <officiant firstname="vlad" secondname="ivanov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
         </order>
     </date>
-    <date day="16" month="3" year="2014">
+    <date day="13" month="11" year="2016">
         <order>
-            <officiant firstname="alexander" secondname="petrov"/>
-            <item cost="144" name="pirozhki"/>
-            <item cost="60" name="chai"/>
-            <item cost="366" name="borsch"/>
+            <officiant firstname="vasya" secondname="sidorov"/>
+            <item cost="1200" name="riba"/>
+            <item cost="580" name="pivo"/>
+            <item cost="820" name="kiriki"/>
             <totalcost>410</totalcost>
         </order>
         <order>
-            <officiant firstname="dimas" secondname="sidorov"/>
-            <item cost="660" name="sushi"/>
-            <item cost="87" name="sok"/>
-            <item cost="50" name="pizza"/>
-            <item cost="555" name="pirozhki"/>
-            <item cost="866" name="borsch"/>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
         </order>
         <order>
-            <officiant firstname="dimas" secondname="sidorov"/>
-            <item cost="230" name="sushi"/>
-            <item cost="47" name="sok"/>
-            <item cost="560" name="pizza"/>
-            <item cost="145" name="pirozhki"/>
-            <item cost="233" name="borsch"/>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="134" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="534" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="270" name="ris"/>
         </order>
         <order>
-            <officiant firstname="vovchik" secondname="petrov"/>
-            <item name="kolbasa" cost="600"/>
-            <item name="gribi" cost="155"/>
+            <officiant firstname="vlad" secondname="ivanov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
         </order>
     </date>
 
