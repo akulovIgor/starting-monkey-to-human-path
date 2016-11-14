@@ -5,6 +5,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
+
 public class TestPreferencesManager {
     public static void test(){
         try {
