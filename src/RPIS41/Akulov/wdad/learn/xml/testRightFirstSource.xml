@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE restaurant SYSTEM "restaurant.dtd">
+<restaurant>
+    <date day="12" month="10" year="2013">
+        <order>
+            <officiant firstname="egor" secondname="ivanov"/>
+            <item cost="300" name="grechka"/>
+            <item cost="100" name="chai"/>
+            <item cost="270" name="sosiski"/>
+            <totalcost>670</totalcost>
+        </order>
+        <order>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
+        </order>
+        <order>
+            <officiant firstname="vasya" secondname="sidorov"/>
+            <item cost="1200" name="riba"/>
+            <item cost="580" name="pivo"/>
+            <item cost="820" name="kiriki"/>
+            <totalcost>451254</totalcost>
+        </order>
+        <order>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <item cost="900" name="vino"/>
+            <item cost="300" name="grechka"/>
+            <item cost="1200" name="riba"/>
+        </order>
+    </date>
+    <date day="19" month="1" year="2015">
+        <order>
+            <officiant firstname="egor" secondname="ivanov"/>
+            <item cost="300" name="grechka"/>
+            <item cost="100" name="chai"/>
+            <item cost="270" name="sosiski"/>
+            <totalcost>670</totalcost>
+        </order>
+        <order>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
+        </order>
+        <order>
+            <officiant firstname="vasya" secondname="sidorov"/>
+            <item cost="1200" name="riba"/>
+            <item cost="580" name="pivo"/>
+            <item cost="820" name="kiriki"/>
+            <totalcost>6541</totalcost>
+        </order>
+        <order>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <item cost="900" name="vino"/>
+            <item cost="300" name="grechka"/>
+            <item cost="1200" name="riba"/>
+            <totalcost>1456845</totalcost>
+        </order>
+    </date>
+    <date day="29" month="7" year="2014">
+        <order>
+            <officiant firstname="vlad" secondname="ivanov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <totalcost>677</totalcost>
+        </order>
+        <order>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="900" name="vino"/>
+            <item cost="150" name="lazanya"/>
+        </order>
+    </date>
+    <date day="10" month="10" year="2016">
+        <order>
+            <officiant firstname="egor" secondname="ivanov"/>
+            <item cost="300" name="grechka"/>
+            <item cost="100" name="chai"/>
+            <item cost="270" name="sosiski"/>
+            <totalcost>670</totalcost>
+        </order>
+        <order>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
+        </order>
+        <order>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <item cost="900" name="vino"/>
+            <item cost="300" name="grechka"/>
+            <item cost="1200" name="riba"/>
+        </order>
+    </date>
+    <date day="25" month="4" year="2015">
+        <order>
+            <officiant firstname="lexa" secondname="sidorov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+            <item cost="900" name="vino"/>
+            <item cost="300" name="grechka"/>
+            <item cost="1200" name="riba"/>
+        </order>
+        <order>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
+        </order>
+        <order>
+            <officiant firstname="vlad" secondname="ivanov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+        </order>
+    </date>
+    <date day="13" month="11" year="2016">
+        <order>
+            <officiant firstname="vasya" secondname="sidorov"/>
+            <item cost="1200" name="riba"/>
+            <item cost="580" name="pivo"/>
+            <item cost="820" name="kiriki"/>
+            <totalcost>410</totalcost>
+        </order>
+        <order>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="180" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="340" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="250" name="ris"/>
+        </order>
+        <order>
+            <officiant firstname="maxim" secondname="petrov"/>
+            <item cost="134" name="kefir"/>
+            <item cost="290" name="kofe"/>
+            <item cost="534" name="moloko"/>
+            <item cost="150" name="lazanya"/>
+            <item cost="270" name="ris"/>
+        </order>
+        <order>
+            <officiant firstname="vlad" secondname="ivanov"/>
+            <item cost="290" name="sous greka"/>
+            <item cost="680" name="govyadina"/>
+        </order>
+    </date>
+
+</restaurant>
