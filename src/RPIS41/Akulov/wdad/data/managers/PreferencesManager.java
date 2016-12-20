@@ -1,128 +1,183 @@
 package RPIS41.Akulov.wdad.data.managers;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.ls.DOMImplementationLS;
-import org.w3c.dom.ls.LSOutput;
-import org.w3c.dom.ls.LSSerializer;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
+import RPIS41.Akulov.wdad.utils.PreferencesConstantManager;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+=======
+import org.w3c.dom.Document;
+
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import java.io.*;
+
+import java.util.Properties;
 
 public class PreferencesManager {
     private static PreferencesManager instance;
-    private static String PATH = "src/RPIS41/Akulov/wdad/resources/configuration/appconfig.xml";
-    private Document doc;
+    private static String sourcePath = "src\\RPIS41\\Akulov\\wdad\\resources\\configuration\\appconfig.xml";
+    private Document appconfig;
 
-    public static PreferencesManager getInstance() throws ParserConfigurationException, IOException, SAXException {
-        if (instance == null) {
+    private PreferencesManager() throws ParserConfigurationException, SAXException, IOException{
+        File xmlFile = new File(sourcePath);
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        appconfig = documentBuilder.parse(xmlFile);
+        appconfig.getDocumentElement().normalize();
+    }
+
+    public static PreferencesManager getInstance() throws ParserConfigurationException, SAXException, IOException{
+        if(instance == null)
             instance = new PreferencesManager();
-        }
         return instance;
     }
 
-    private PreferencesManager() throws ParserConfigurationException, SAXException, IOException{
-        File xmlFile = new File(PATH);
-        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-        doc= documentBuilder.parse(xmlFile);
-        doc.getDocumentElement().normalize();
+    public void setProperty(String key, String value){
+        getPropertyElement(key).setTextContent(value);
+        saveChanges();
     }
-
-    public boolean isCreateRegistry() {
-        NodeList nodeList = doc.getElementsByTagName("createregistry");
-        if (nodeList.item(0).getTextContent().equals("yes")) {
-            return true;
-        } else {
-            return false;
+    public String getProperty(String key){
+        return getPropertyElement(key).getTextContent();
+    }
+    public void setProperties(Properties prop){
+        for (String key : prop.stringPropertyNames()) {
+            setProperty(key, prop.getProperty(key));
         }
     }
+    public Properties getProperties() {
+        Properties props = new Properties();
+        String key, value;
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        String expression = "//*[not(*)]";
 
-    public void setCreateRegistry(boolean createRegistry) throws IOException {
-        NodeList nodeList = doc.getElementsByTagName("createregistry");
-        if (createRegistry) {
-            nodeList.item(0).setTextContent("yes");
-        } else {
-            nodeList.item(0).setTextContent("no");
+        try {
+            NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(appconfig, XPathConstants.NODESET);
+
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                key = getNodePath(nodeList.item(i));
+                value = getProperty(key);
+                props.put(key, value);
+            }
+        } catch (XPathExpressionException e) {
+            e.printStackTrace();
         }
-        rewriteDoc();
+        return props;
     }
-
-    public String getRegistryAddress() {
-        NodeList nodeList = doc.getElementsByTagName("registryaddress");
-        return nodeList.item(0).getTextContent();
+    public void addBindedObject(String name, String className){
+        Element bindedObject = appconfig.createElement("bindedobject");
+        bindedObject.setAttribute("name", name);
+        bindedObject.setAttribute("class", className);
+        Element server = (Element)appconfig.getElementsByTagName("server").item(0);
+        server.appendChild(bindedObject);
+        saveChanges();
     }
-
-    public void setRegistryAddress(String s) throws IOException {
-        NodeList nodeList = doc.getElementsByTagName("registryaddress");
-        nodeList.item(0).setTextContent(s);
-        rewriteDoc();
-    }
-
-    public int getRegistryPort() {
-        NodeList nodeList = doc.getElementsByTagName("registryport");
-        return Integer.parseInt(nodeList.item(0).getTextContent());
-    }
-
-    public void setRegistryPort(int registryPort) throws IOException {
-        NodeList nodeList = doc.getElementsByTagName("registryport");
-        nodeList.item(0).setTextContent(String.valueOf(registryPort));
-        rewriteDoc();
-    }
-
-    public String getPolicyPath() {
-        NodeList nodeList = doc.getElementsByTagName("policypath");
-        return nodeList.item(0).getTextContent();
-    }
-
-    public void setPolicyPath(String s) throws IOException {
-        NodeList nodeList = doc.getElementsByTagName("policypath");
-        nodeList.item(0).setTextContent(s);
-        rewriteDoc();
-    }
-
-    public boolean getUseCodeBaseOnly() {
-        NodeList nodeList = doc.getElementsByTagName("usecodebaseonly");
-        if (nodeList.item(0).getTextContent().equals("yes")) {
-            return true;
-        } else {
-            return false;
+    public void removeBindedObject(String name){
+        NodeList bindedObjects = appconfig.getElementsByTagName("bindedobject");
+        for (int i = 0; i < bindedObjects.getLength(); i++) {
+            Element bindedObject = (Element)bindedObjects.item(i);
+            if (name.equals(bindedObject.getAttribute("name"))) {
+                bindedObject.getParentNode().removeChild(bindedObject);
+            }
         }
+        saveChanges();
     }
 
-    public void setUseCodeBaseOnly(boolean useCodeBaseOnly) throws IOException {
-        NodeList nodeList = doc.getElementsByTagName("usecodebaseonly");
-        if (useCodeBaseOnly) {
-            nodeList.item(0).setTextContent("yes");
-        } else {
-            nodeList.item(0).setTextContent("no");
+    private String getNodePath(Node node) {
+        Node parent = node.getParentNode();
+        if (parent.getNodeName().equals("#document")) {
+            return node.getNodeName();
         }
-        rewriteDoc();
+        return getNodePath(parent) + '.' + node.getNodeName();
+    }
+    private Element getPropertyElement(String key){
+        String[] tags = key.split("\\.");
+        return (Element)appconfig.getElementsByTagName(tags[tags.length - 1]).item(0);
     }
 
-    public String getClassProvider() {
-        NodeList nodeList = doc.getElementsByTagName("classprovider");
-        return nodeList.item(0).getTextContent();
+    @Deprecated
+    public boolean getCreateRegistry(){
+        NodeList createRegistry = appconfig.getElementsByTagName("createregistry");
+        return createRegistry.item(0).getTextContent().equals("yes");
+    }
+    @Deprecated
+    public void setCreateRegistry(boolean createRegistryValue){
+        NodeList createRegistry = appconfig.getElementsByTagName("createregistry");
+        if(createRegistryValue)
+            createRegistry.item(0).setTextContent("yes");
+        else createRegistry.item(0).setTextContent("no");
+        saveChanges();
+    }
+    @Deprecated
+    public String getRegistryAddress(){
+        NodeList registryAddress = appconfig.getElementsByTagName("registryaddress");
+        return registryAddress.item(0).getTextContent();
+    }
+    @Deprecated
+    public void setRegistryAddress(String registryAddressValue){
+        NodeList registryAddress = appconfig.getElementsByTagName("registryaddress");
+        registryAddress.item(0).setTextContent(registryAddressValue);
+        saveChanges();
+    }
+    @Deprecated
+    public int getRegistryPort(){
+        NodeList registryPort = appconfig.getElementsByTagName("registryport");
+        return Integer.parseInt(registryPort.item(0).getTextContent());
+    }
+    @Deprecated
+    public void setRegistryPort(int registryPortValue){
+        NodeList registryPort = appconfig.getElementsByTagName("registryport");
+        registryPort.item(0).setTextContent(Integer.toString(registryPortValue));
+        saveChanges();
+    }
+    @Deprecated
+    public String getPolicyPath(){
+        NodeList policyPath = appconfig.getElementsByTagName("policypath");
+        return policyPath.item(0).getTextContent();
+    }
+    @Deprecated
+    public void setPolicyPath(String policyPathValue){
+        NodeList policyPath = appconfig.getElementsByTagName("policypath");
+        policyPath.item(0).setTextContent(policyPathValue);
+        saveChanges();
+    }
+    @Deprecated
+    public boolean isUseCodeBaseOnly(){
+        NodeList useCodeBaseOnly = appconfig.getElementsByTagName("usecodebaseonly");
+        return useCodeBaseOnly.item(0).getTextContent().equals("yes");
+    }
+    @Deprecated
+    public void setUseCodeBaseOnly(boolean useCodeBaseOnlyValue){
+        NodeList useCodeBaseOnly = appconfig.getElementsByTagName("usecodebaseonly");
+        if(useCodeBaseOnlyValue)
+            useCodeBaseOnly.item(0).setTextContent("yes");
+        else useCodeBaseOnly.item(0).setTextContent("no");
+        saveChanges();
+    }
+    @Deprecated
+    public String getClassProvider(){
+        NodeList classProvider = appconfig.getElementsByTagName("classprovider");
+        return classProvider.item(0).getTextContent();
+    }
+    @Deprecated
+    public void setClassProvider(String classProviderValue) {
+        NodeList classProvider = appconfig.getElementsByTagName("classprovider");
+        classProvider.item(0).setTextContent(classProviderValue);
+        saveChanges();
     }
 
-    public void setClassProvider(String classproviderURL) throws IOException {
-        NodeList nodeList = doc.getElementsByTagName("classprovider");
-        nodeList.item(0).setTextContent(classproviderURL);
-        rewriteDoc();
-    }
-
-    private void rewriteDoc() throws IOException {
-        DOMImplementationLS domImplementationLS =
-                (DOMImplementationLS) doc.getImplementation().getFeature("LS", "3.0");
-        LSOutput lsOutput = domImplementationLS.createLSOutput();
-        FileOutputStream outputStream = new FileOutputStream(PATH);
-        lsOutput.setByteStream(outputStream);
-        LSSerializer lsSerializer = domImplementationLS.createLSSerializer();
-        lsSerializer.write(doc, lsOutput);
-        outputStream.close();
+    private void saveChanges() {
+        try {
+            DOMImplementationLS domImplementationLS =
+                    (DOMImplementationLS) appconfig.getImplementation().getFeature("LS", "3.0");
+            LSOutput lsOutput = domImplementationLS.createLSOutput();
+            FileOutputStream outputStream = new FileOutputStream(sourcePath);
+            lsOutput.setByteStream(outputStream);
+            LSSerializer lsSerializer = domImplementationLS.createLSSerializer();
+            lsSerializer.write(appconfig, lsOutput);
+            outputStream.close();
+        }catch (IOException e){e.printStackTrace();}
     }
 }
