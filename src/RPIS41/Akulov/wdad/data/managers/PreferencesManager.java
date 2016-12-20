@@ -1,18 +1,13 @@
 package RPIS41.Akulov.wdad.data.managers;
 
+
 import RPIS41.Akulov.wdad.utils.PreferencesConstantManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.ls.DOMImplementationLS;
-import org.w3c.dom.ls.LSOutput;
-import org.w3c.dom.ls.LSSerializer;
-import org.xml.sax.SAXException;
+=======
+import org.w3c.dom.Document;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
