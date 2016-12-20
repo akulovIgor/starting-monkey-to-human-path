@@ -19,12 +19,12 @@
         <server>
             <registry>
                 <createregistry>yes</createregistry>
-                <registryaddress>233.45.123.243</registryaddress>
+                <registryaddress>localhost</registryaddress>
                 <registryport>1099</registryport>
             </registry>
         </server>
         <client>
-            <policypath>efe\ewfr\wf\checkSum.policy</policypath>
+            <policypath>security.policy</policypath>
             <usecodebaseonly>no</usecodebaseonly>
         </client>
         <classprovider>C:\edw\wed\wed\client.jar</classprovider>
