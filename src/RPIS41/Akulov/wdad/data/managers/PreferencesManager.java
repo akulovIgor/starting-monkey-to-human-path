@@ -2,12 +2,16 @@ package RPIS41.Akulov.wdad.data.managers;
 
 
 import RPIS41.Akulov.wdad.utils.PreferencesConstantManager;
+import org.xml.sax.SAXException;
+import org.w3c.dom.*;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-=======
-import org.w3c.dom.Document;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSOutput;
+import org.w3c.dom.ls.LSSerializer;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
@@ -21,7 +25,7 @@ public class PreferencesManager {
     private static String sourcePath = "src\\RPIS41\\Akulov\\wdad\\resources\\configuration\\appconfig.xml";
     private Document appconfig;
 
-    private PreferencesManager() throws ParserConfigurationException, SAXException, IOException{
+    private PreferencesManager() throws ParserConfigurationException, IOException, org.xml.sax.SAXException{
         File xmlFile = new File(sourcePath);
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
