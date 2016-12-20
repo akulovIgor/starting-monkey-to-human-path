@@ -6,9 +6,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 
-/**
- * Created by molish on 22.10.2016.
- */
+
 public class XmlDataManagerImpl implements XmlDataManager,Serializable {
 
     private final XmlTask xmlTask = new XmlTask("src\\RPIS41\\Akulov\\wdad\\learn\\xml\\testRightFirst");
